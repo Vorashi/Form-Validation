@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Form Validation</title>
+</head>
+<body>
+	<form id="registration">
+		<div class="container">
+			<h1>Welcome!</h1>
+				<div class="box-login">
+					<input type="text" name="login" id="login" placeholder="Write your login" required />
+					<span class="validity-icon"></span>
+				</div>
+				<div class="box-email">
+					<input type="email" name="email" id="email" placeholder="Write your email" required />
+					<span class="validity-icon"></span>
+				</div>
+				<div class="box-password">
+					<input type="password" name="password" id="password" placeholder="Write your password" required />
+					<span class="validity-icon"></span>
+				</div>
+				<div class="error-message"></div>
+				<button class="btn" type="submit">Log in</button>
+		</div>
+	</form>
+	<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Exo 2", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: radial-gradient(18% 28% at 24% 50%, #CEFAFFFF 7%, #073AFF00 100%),
+	radial-gradient(18% 28% at 18% 71%, #FFFFFF59 6%, #073AFF00 100%),
+	radial-gradient(70% 53% at 36% 76%, #73F2FFFF 0%, #073AFF00 100%),
+	radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%),
+	radial-gradient(42% 53% at 34% 72%, #FFFFFFFF 7%, #073AFF00 100%),
+	radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%),
+	radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%),
+	radial-gradient(21% 37% at 72% 23%, #D3FF6D9C 24%, #073AFF00 100%),
+	radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%),
+	radial-gradient(74% 86% at 67% 38%, #6DFFAEF5 24%, #073AFF00 100%),
+	linear-gradient(125deg, #4EB5FFFF 1%, #4C00FCFF 100%);
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+#login, #email, #password {
+	width: 380px;
+	height: 40px;
+	padding: 18px;
+	border: 2px solid black;
+	border-radius: 25px;
+	margin: 10px;
+	background: rgba(255, 255, 255, 0.387);
+	box-shadow: 2px 2px 15px 7px rgba(0, 0, 0, 0.1);
+	&:focus {
+		border: 1px solid #01f8fc;
+		outline: 3px solid #01f8fc;
+	}
+}
+
+.validity-icon {
+	visibility: collapse;
+}
+
+.error-message {
+	background: red;
+	border-radius: 15px;
+	width: 450px;
+	height: 40px;
+	text-align: center;
+	margin: 10px;
+	visibility: hidden;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 550px;
+	height: 60vh;
+	padding: 15px;
+	color: #000;
+	border: 2px solid #000;
+	border-radius: 25px;
+	background: rgba(255, 255, 255, 0.387);
+	backdrop-filter: blur(50px);
+	box-shadow: 2px 2px 15px 7px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+	width: 260px;
+	height: 50px;
+	border: 0px solid black;
+	border-radius: 25px;
+	background: #fff;
+	backdrop-filter: blur(10px);
+	box-shadow: 2px 2px 15px 7px rgba(0, 0, 0, 0.1);
+	&:hover	{
+		background: #f1eeeecd;
+		backdrop-filter: blur(10px);
+	}
+	&:active {
+		background: #f9f7f7c3;
+		backdrop-filter: blur(10px);
+		outline: 3px solid #01f8fc;
+	}
+}
+
+.box-login, .box-email, .box-password, .error-message {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	text-align: center;
+	
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:invalid + .validity-icon::before {
+  content: '✖';
+  color: red;
+}
+
+input:valid + .validity-icon::before {
+  content: '✓';
+  color: green;
+}
