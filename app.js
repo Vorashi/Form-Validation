@@ -1,5 +1,6 @@
 const form = document.getElementById('registration');
 const icon = document.getElementsByClassName('validity-icon');
+const error = document.querySelector('.error-message');
 
 form.addEventListener('submit', function(e) {
 	e.preventDefault();
@@ -22,6 +23,7 @@ function checkLogin() {
 	if (login !== '') {
 		let validLogin = login.match(/^[a-zA-Z0-9]+$/).input;
 		localStorage.setItem('login', validLogin);
+		error.style.visibility = 'hidden';
 		icon[0].style.visibility = 'visible';
 	} else {
 		icon[0].style.visibility = 'hidden';
@@ -34,6 +36,7 @@ function checkEmail() {
 	if ( email.match(/^[a-z0-9]{7,20}@[a-z]{5,14}\.(com|ru)$/i) ) {
 		let validEmail = email.match(/^[a-z0-9]{7,20}@[a-z]{5,14}\.(com|ru)$/i).input;
 		localStorage.setItem('email', validEmail);
+		error.style.visibility = 'hidden';
 		icon[1].style.visibility = 'visible';
 	} else {
 		showError('Введите корректный email!', 1);
@@ -45,6 +48,7 @@ function checkPassword() {
 	if (password.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,20}$/)) {
 		let validPassWord = password.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,20}$/).input;
 		localStorage.setItem('password', validPassWord);
+		error.style.visibility = 'hidden';
 		icon[2].style.visibility = 'visible';
 	} else {
 		showError('Введите корректный пароль', 2);
@@ -52,7 +56,6 @@ function checkPassword() {
 }
 
 function showError(message, index) {
-	const error = document.querySelector('.error-message');
 	error.style.visibility = 'visible';
 	icon[index].style.visibility = 'visible';
 	error.textContent = message;
